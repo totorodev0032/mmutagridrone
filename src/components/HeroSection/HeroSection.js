@@ -28,6 +28,25 @@ const HeroWrapper = styled.div`
     font-weight: 500;
     padding: 10px;
   }
+
+  @media (max-width: 496px) {
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    img {
+      width: 90%;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .title {
+      font-size: 10px;
+    }
+  }
 `;
 
 const HeroSection = () => {
