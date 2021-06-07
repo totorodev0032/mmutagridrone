@@ -124,7 +124,7 @@ const ProjectList = () => {
                 <p className="description">
                   Plant health measurement using leaf images.
                 </p>
-                <Link className="links" to="#">
+                <Link className="links" to="/Health-mesurement-project">
                   <p>View More &rarr;</p>
                 </Link>{' '}
               </ProjectBoxContainer>
