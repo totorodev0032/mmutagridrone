@@ -3,9 +3,9 @@ import HeroSection from './components/HeroSection/HeroSection';
 import LocationSensorData from './components/LocationSensorData/LocationSensorData';
 import ProjectList from './components/ProjectList/ProjectList';
 import Jangl from './pages/Jangl/Jangl';
-import Madan from './pages/Madan./Madan';
 import Plant from './pages/Plant/Plant';
 import Weed from './pages/Weed/Weed';
+// import Madan from './pages/Madan/Madan';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </Route>
 
         <Route path="/madan-mohan-malviya">
-          <Madan />
+          <Jangl />
         </Route>
 
         <Route path="/plant-species-project" component={Plant} />
