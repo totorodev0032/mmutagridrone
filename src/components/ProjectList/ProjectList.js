@@ -95,7 +95,7 @@ const ProjectList = () => {
                   Model is able to detect apple, blueberry, and tomato plants
                   using leaf data successfully.
                 </p>
-                <Link className="links" to="#">
+                <Link className="links" to="/plant-species-project">
                   <p>View More &rarr;</p>
                 </Link>
               </ProjectBoxContainer>
@@ -110,7 +110,7 @@ const ProjectList = () => {
                   Identification of unwanted crop or weed in the field through
                   drone and artificial intelligence technique.
                 </p>
-                <Link className="links" to="#">
+                <Link className="links" to="/weed-identification-project">
                   <p>View More &rarr;</p>
                 </Link>{' '}
               </ProjectBoxContainer>

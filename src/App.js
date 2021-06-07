@@ -4,6 +4,8 @@ import LocationSensorData from './components/LocationSensorData/LocationSensorDa
 import ProjectList from './components/ProjectList/ProjectList';
 import Jangl from './pages/Jangl/Jangl';
 import Madan from './pages/Madan./Madan';
+import Plant from './pages/Plant/Plant';
+import Weed from './pages/Weed/Weed';
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
         <Route path="/madan-mohan-malviya">
           <Madan />
         </Route>
+
+        <Route path="/plant-species-project" component={Plant} />
+        <Route path="/weed-identification-project" component={Weed} />
       </Router>
     </>
   );
