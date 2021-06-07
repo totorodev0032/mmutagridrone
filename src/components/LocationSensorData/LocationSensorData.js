@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const LocationWrapper = styled.div`
@@ -35,6 +36,11 @@ const ContentArea = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
+  .links {
+    color: black;
+    text-decoration: none;
+  }
+
   @media (max-width: 496px) {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -65,12 +71,17 @@ const LocationSensorData = () => {
         <LocationContainer>
           <Header>Location Sensor Data</Header>
           <ContentArea>
-            <LocationBoxWrapper>
-              <p>Jangl Ram Lakhan Gorakhpur</p>
-            </LocationBoxWrapper>
-            <LocationBoxWrapper>
-              <p>Madan Mohan Malviya</p>
-            </LocationBoxWrapper>
+            <Link className="links" to="/jangl-ram-lakhan">
+              <LocationBoxWrapper>
+                <p>Jangl Ram Lakhan Gorakhpur</p>
+              </LocationBoxWrapper>
+            </Link>
+
+            <Link to="/madan-mohan-malviya" className="links">
+              <LocationBoxWrapper>
+                <p>Madan Mohan Malviya</p>
+              </LocationBoxWrapper>
+            </Link>
           </ContentArea>
         </LocationContainer>
       </LocationWrapper>
