@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SensorImage from '../../images/sensorpage.png';
 import * as WiIcons from 'react-icons/wi';
 import * as FaIcons from 'react-icons/fa';
 import * as TiIcons from 'react-icons/ti';
+import { GiChemicalDrop } from 'react-icons/gi'
+import { FiDroplet } from 'react-icons/fi'
+import firebase from '../../firebase'
 
 const SensorWrapper = styled.div`
   display: flex;
@@ -47,6 +50,25 @@ const SensorContentBox = styled.div`
 `;
 
 const Jangl = () => {
+
+  const [data, setData] = useState({})
+
+  useEffect(() => {
+    let mounted = true
+    if (mounted) {
+      const dbRef = firebase.database().ref();
+      dbRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        setData(data)
+      });
+    }
+
+    return function cleanup() {
+      mounted = false
+    }
+  }, [])
+
+
   return (
     <>
       <SensorWrapper>
@@ -54,7 +76,7 @@ const Jangl = () => {
         <SensorBoxWrapper>
           <SensorContentBox>
             <WiIcons.WiHumidity style={{ color: 'white', fontSize: '40px' }} />
-            <p>20 </p>
+            <p>{data.env_humi}</p>
             <p>Humidity</p>
           </SensorContentBox>
 
@@ -62,7 +84,7 @@ const Jangl = () => {
             <FaIcons.FaTemperatureHigh
               style={{ color: 'white', fontSize: '40px' }}
             />
-            <p>20 </p>
+            <p>{data.env_temp}</p>
             <p>Environment Temp</p>
           </SensorContentBox>
 
@@ -70,8 +92,24 @@ const Jangl = () => {
             <TiIcons.TiWeatherWindyCloudy
               style={{ color: 'white', fontSize: '40px' }}
             />
-            <p>20 </p>
+            <p>{data.soil_temp}</p>
             <p>Soil Temp</p>
+          </SensorContentBox>
+
+          <SensorContentBox>
+            <GiChemicalDrop
+              style={{ color: 'white', fontSize: '40px' }}
+            />
+            <p>{data.soil_ph}</p>
+            <p>Soil pH</p>
+          </SensorContentBox>
+
+          <SensorContentBox>
+            <FiDroplet
+              style={{ color: 'white', fontSize: '40px' }}
+            />
+            <p>{data.soil_mois}</p>
+            <p>Soil moisture</p>
           </SensorContentBox>
         </SensorBoxWrapper>
       </SensorWrapper>
