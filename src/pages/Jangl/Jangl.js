@@ -24,13 +24,15 @@ const SensorWrapper = styled.div`
     font-size: 30px;
     color: white;
     font-weight: 600;
+    text-align:center;
   }
 `;
 
 const SensorBoxWrapper = styled.div`
   display: flex;
-  width: 500px;
-  height: 300px;
+  flex-wrap:wrap;
+  border-radius: 10px;
+  padding:40px;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: space-around;
@@ -38,14 +40,16 @@ const SensorBoxWrapper = styled.div`
 
 const SensorContentBox = styled.div`
   display: flex;
+  padding:10px;
   height: auto;
   flex-direction: column;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
 
   p {
     color: white;
     margin-top: 2px;
+    text-align: center;
   }
 `;
 
