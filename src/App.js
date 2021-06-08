@@ -6,12 +6,14 @@ import Health from './pages/Health/Health';
 import Jangl from './pages/Jangl/Jangl';
 import Plant from './pages/Plant/Plant';
 import Weed from './pages/Weed/Weed';
+import NavbarComponent from './components/Navbar'
 // import Madan from './pages/Madan/Madan';
 
 function App() {
   return (
     <>
       <Router>
+        <NavbarComponent />
         <Route exact path="/">
           <HeroSection />
           <LocationSensorData />
